@@ -1,0 +1,31 @@
+easyblock = 'Tarball'
+
+name = 'FIX'
+version = '1.068'
+
+homepage = 'https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FIX'
+description = """FIX attempts to auto-classify ICA components into "good" vs "bad" components, so that the bad
+components can be removed from the 4D FMRI data."""
+
+toolchain = {'name': 'foss', 'version': '2019a'}
+
+source_urls = ['http://www.fmrib.ox.ac.uk/~steve/ftp/']
+sources = ['fix.tar.gz']
+checksums = ['bb10a24f28b3c26a382744faa127c1c7bf3167dc7a4f06da1aab89b58b74ac72']
+
+dependencies = [
+    ('FSL', '6.0.2', '-Python-3.7.2'),
+    ('MCR', 'R2017b', '', True),
+    ('R', '3.6.0')
+]
+
+modextravars = {
+    'FSL_FIX_MCRROOT': "$EBROOTMCR"
+}
+
+sanity_check_paths = {
+    'files': ['fix'],
+    'dirs': [''],
+}
+
+moduleclass = 'bio'
