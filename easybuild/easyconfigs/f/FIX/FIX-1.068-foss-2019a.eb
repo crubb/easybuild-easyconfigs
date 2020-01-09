@@ -16,15 +16,20 @@ checksums = ['bb10a24f28b3c26a382744faa127c1c7bf3167dc7a4f06da1aab89b58b74ac72']
 dependencies = [
     ('FSL', '6.0.2', '-Python-3.7.2'),
     ('MCR', 'R2017b', '', True),
-    ('R', '3.6.0')
+    ('R', '3.6.0'),
+    ('ConnectomeWorkbench', '1.3.2')
 ]
+
+# add the installation dir to PATH
+modextrapaths = {'PATH': ''}
 
 sanity_check_paths = {
     'files': ['fix'],
     'dirs': [''],
 }
 
-modtclfooter = "set ::env(FSL_FIX_MCRROOT) $::env(EBROOTMCR)"
+# setup FSL_FIX_MCRROOT to point to the install directory of MATLAB's Compiler Runtime (MCR)
+modtclfooter = "setenv FSL_FIX_MCRROOT $::env(EBROOTMCR)"
 modluafooter = 'setenv("FSL_FIX_MCRROOT", os.getenv("EBROOTMCR"))'
 
 moduleclass = 'bio'
