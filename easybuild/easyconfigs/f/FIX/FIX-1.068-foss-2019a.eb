@@ -19,13 +19,12 @@ dependencies = [
     ('R', '3.6.0')
 ]
 
-modextravars = {
-    'FSL_FIX_MCRROOT': "$EBROOTMCR"
-}
-
 sanity_check_paths = {
     'files': ['fix'],
     'dirs': [''],
 }
+
+modtclfooter = "set ::env(FSL_FIX_MCRROOT) $::env(EBROOTMCR)"
+modluafooter = 'setenv("FSL_FIX_MCRROOT", os.getenv("EBROOTMCR"))'
 
 moduleclass = 'bio'
