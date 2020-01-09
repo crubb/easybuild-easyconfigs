@@ -16,6 +16,8 @@ checksums = ['a01619b30f8cfd34a9a9cefe8323a2ada22a65722fc13b823dae36086ddd259f']
 
 # disable MCR's stock libstdc++.so.6
 # https://www.mathworks.com/matlabcentral/answers/329796-issue-with-libstdc-so-6
-postinstallcmds = ['mv "%(installdir)s/v93/sys/os/glnxa64/libstdc++.so.6" "%(installdir)s/v93/sys/os/glnxa64/libstdc++.so.6-backup"']
+postinstallcmds = [
+    'mv "%(installdir)s/v93/sys/os/glnxa64/libstdc++.so.6" "%(installdir)s/v93/sys/os/glnxa64/libstdc++.so.6-backup"'
+]
 
 moduleclass = 'math'
